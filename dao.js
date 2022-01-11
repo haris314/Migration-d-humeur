@@ -61,12 +61,6 @@ class Dao {
       });
     });
   }
-  // async get(sql, params = []) {
-  //   console.log('Executing', sql, params);
-  //   const result = await this.db.get(sql, params);
-  //   console.log('IN dao result = ', result);
-  //   return result;
-  // }
 
   all(sql, params = []) {
     console.log("Executing", sql, params);
@@ -86,5 +80,4 @@ class Dao {
   }
 }
 
-// export default Dao;
 module.exports = Dao;
