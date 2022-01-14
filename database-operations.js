@@ -34,6 +34,7 @@ const getAllSurveyEntries = async () => {
       FROM survey
     `
   );
+  return rows;
 };
 
 module.exports = {

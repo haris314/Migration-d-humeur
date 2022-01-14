@@ -55,7 +55,6 @@ class Dao {
           console.log(err);
           reject(err);
         } else {
-          console.log("Result of", sql, params, result);
           resolve(result);
         }
       });
@@ -72,7 +71,6 @@ class Dao {
           console.log(err);
           reject(err);
         } else {
-          console.log("Result of", sql, params, rows);
           resolve(rows);
         }
       });
