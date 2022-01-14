@@ -29,7 +29,7 @@ const convert = (moodPatternEntry) => {
   const moodRating = convertSadHappyToMoodRating(moodPatternEntry.sad_happy);
   return {
     ...moodflowObject,
-    timestamp: moodPatternEntry.start_unixtime,
+    timestamp: moodPatternEntry.start_unixtime * 1000,
     mood: RATING_MOOD_MAP[moodRating],
     rating: moodRating
   }
