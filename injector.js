@@ -10,8 +10,23 @@
 
 const inject = (moodflowEntry, moodflowDb) => {
   const date = new Date(moodflowEntry.timestamp);
-  ((((moodflowDb.data.moods[date.getFullYear()] ??= {})[date.getMonth() + 1] ??=
-    {})[date.getDate()] ??= {}).entries ??= []).push(moodflowEntry);
+  (((moodflowDb.data.moods[date.getFullYear()] ??= {})[date.getMonth() + 1] ??=
+    {})[date.getDate()] ??= {
+    isSpecialDay: false,
+    sleep: {
+      tags: [],
+      inBedAt: null,
+      outOfBedAt: null,
+      restedness: null,
+      minutesOfSleep: null,
+    },
+    physicalActivity: {
+      vigorousActivityMinutes: 0,
+      moderateActivityMinutes: 0,
+      tags: [],
+    },
+    entries: [],
+  }).entries.push(moodflowEntry);
 };
 
 const postProcess = (moodflowDb) => {
