@@ -21,13 +21,23 @@ const printSurveyTable = async () => {
         SELECT start_unixtime, start_date, start_time, sad_happy, discontent_content, stressed_relaxed
         FROM survey
         ORDER BY start_unixtime DESC
-        LIMIT 100
+        LIMIT 10
         `,
     []
+  );
+};
+
+const getAllSurveyEntries = async () => {
+  const rows = await dao.all(
+    `
+      SELECT start_unixtime, start_date, start_time, sad_happy, discontent_content, stressed_relaxed
+      FROM survey
+    `
   );
 };
 
 module.exports = {
   printTableSummaries,
   printSurveyTable,
+  getAllSurveyEntries,
 };
