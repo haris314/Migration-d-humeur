@@ -27,11 +27,12 @@ const printSurveyTable = async () => {
   );
 };
 
-const getAllSurveyEntries = async () => {
+const getAllValidSurveyEntries = async () => {
   const rows = await dao.all(
     `
       SELECT start_unixtime, start_date, start_time, sad_happy, discontent_content, stressed_relaxed
       FROM survey
+      WHERE start_unixtime NOT NULL
     `
   );
   return rows;
@@ -40,5 +41,5 @@ const getAllSurveyEntries = async () => {
 module.exports = {
   printTableSummaries,
   printSurveyTable,
-  getAllSurveyEntries,
+  getAllValidSurveyEntries,
 };

@@ -6,7 +6,7 @@ const injector = require("./injector.js");
 
 const main = async () => {
   console.info("Starting Conversion");
-  const rows = await dbOperations.getAllSurveyEntries();
+  const rows = await dbOperations.getAllValidSurveyEntries();
   rows.forEach((moodPatternEntry) => {
     const moodFlowEntry = convert(moodPatternEntry);
     injector.inject(moodFlowEntry, moodflowDb);
