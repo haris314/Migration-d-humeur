@@ -1,7 +1,10 @@
-const db_operations = require("./database-operations.js");
+const dbOperations = require("./database-operations.js");
+const moodflowSkeletonObject = require("./moodflow-skeleton.js");
 
 const main = async () => {
-  await db_operations.printSurveyTable();
+  // await dbOperations.printSurveyTable();
+  // console.log(moodflowSkeletonObject);
+  test();
 };
 
 main();
