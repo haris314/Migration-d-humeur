@@ -46,7 +46,7 @@ const postProcess = (moodflowDb) => {
 
 const processInternal = (dayObject, year, month, day) => {
   dayObject.entries.sort((o1, o2) => {
-    if (o1.timestamp < o2.timestamp) return -1;
+    if (o1.timestamp > o2.timestamp) return -1;
     else return 1;
   });
 
