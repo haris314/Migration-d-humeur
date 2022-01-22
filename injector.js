@@ -49,15 +49,6 @@ const processInternal = (dayObject, year, month, day) => {
     if (o1.timestamp > o2.timestamp) return -1;
     else return 1;
   });
-
-  dayObject.day = parseInt(day);
-  dayObject.month = parseInt(month);
-  dayObject.year = parseInt(year);
-  dayObject.avgRating =
-    dayObject.entries.reduce(
-      (totalRating, entry) => totalRating + entry.rating,
-      0
-    ) / dayObject.entries.length;
 };
 
 module.exports = { inject, postProcess };
